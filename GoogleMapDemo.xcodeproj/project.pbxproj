@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E7A6F4FDBBE253C3F9D9FF6 /* libPods-GoogleMapDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D69678493B6698CF0AE168FF /* libPods-GoogleMapDemo.a */; };
 		A759756A1B170652008DD8DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A75975691B170652008DD8DD /* main.m */; };
 		A759756D1B170652008DD8DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A759756C1B170652008DD8DD /* AppDelegate.m */; };
 		A75975701B170652008DD8DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A759756F1B170652008DD8DD /* ViewController.m */; };
@@ -40,6 +41,9 @@
 		A759757D1B170652008DD8DD /* GoogleMapDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleMapDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75975821B170652008DD8DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A75975831B170652008DD8DD /* GoogleMapDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoogleMapDemoTests.m; sourceTree = "<group>"; };
+		A812A32421FFE70CEF3B00BF /* Pods-GoogleMapDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleMapDemo/Pods-GoogleMapDemo.release.xcconfig"; sourceTree = "<group>"; };
+		AFDE47610AAD77E8F70E3CC7 /* Pods-GoogleMapDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleMapDemo/Pods-GoogleMapDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D69678493B6698CF0AE168FF /* libPods-GoogleMapDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleMapDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E7A6F4FDBBE253C3F9D9FF6 /* libPods-GoogleMapDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +65,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1679F26E6AC2FE85543954A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D69678493B6698CF0AE168FF /* libPods-GoogleMapDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72D9DA2330F6F74EBE0F7641 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFDE47610AAD77E8F70E3CC7 /* Pods-GoogleMapDemo.debug.xcconfig */,
+				A812A32421FFE70CEF3B00BF /* Pods-GoogleMapDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A759755B1B170652008DD8DD = {
 			isa = PBXGroup;
 			children = (
 				A75975661B170652008DD8DD /* GoogleMapDemo */,
 				A75975801B170652008DD8DD /* GoogleMapDemoTests */,
 				A75975651B170652008DD8DD /* Products */,
+				72D9DA2330F6F74EBE0F7641 /* Pods */,
+				1679F26E6AC2FE85543954A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A75975871B170652008DD8DD /* Build configuration list for PBXNativeTarget "GoogleMapDemo" */;
 			buildPhases = (
+				FD4E2B2B09B0892377034F28 /* Check Pods Manifest.lock */,
 				A75975601B170652008DD8DD /* Sources */,
 				A75975611B170652008DD8DD /* Frameworks */,
 				A75975621B170652008DD8DD /* Resources */,
+				30D3145A2DA5F4CA37E0261F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +239,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30D3145A2DA5F4CA37E0261F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoogleMapDemo/Pods-GoogleMapDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD4E2B2B09B0892377034F28 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A75975601B170652008DD8DD /* Sources */ = {
@@ -347,21 +406,29 @@
 		};
 		A75975881B170652008DD8DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFDE47610AAD77E8F70E3CC7 /* Pods-GoogleMapDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				INFOPLIST_FILE = GoogleMapDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
 		A75975891B170652008DD8DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A812A32421FFE70CEF3B00BF /* Pods-GoogleMapDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				INFOPLIST_FILE = GoogleMapDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};
@@ -418,6 +485,7 @@
 				A75975891B170652008DD8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A759758A1B170652008DD8DD /* Build configuration list for PBXNativeTarget "GoogleMapDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +494,7 @@
 				A759758C1B170652008DD8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
